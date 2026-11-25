@@ -1,0 +1,5 @@
+# OpenAI Whisper — speech recognition (upstream: https://github.com/openai/whisper)
+# Install: pip install -r requirements.txt
+# System dependency (not a pip package): ffmpeg
+#   sudo apt update && sudo apt install ffmpeg
+openai-whisper
