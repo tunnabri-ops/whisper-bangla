@@ -1,24 +1,22 @@
 # Whisper Bangla — অডিও থেকে বাংলা টেক্সট ও সাবটাইটেল
 
-OpenAI Whisper দিয়ে যেকোনো অডিও (mp3/wav/flac) থেকে বাংলা টেক্সট বের করুন, সাথে SRT সাবটাইটেল ফাইল। Built on **openai/whisper**.
-
-- **Original repo:** https://github.com/openai/whisper (robust speech recognition — audio to text, many languages including Bangla)
+OpenAI Whisper দিয়ে যেকোনো অডিও (mp3/wav/flac) থেকে বাংলা টেক্সট বের করুন, সাথে SRT সাবটাইটেল ফাইল।
 
 ## কী আছে / What is inside
 
 - `transcribe-bangla.py` — ট্রান্সক্রিপশন স্ক্রিপ্ট: `--language bn` ডিফল্ট, `--model` দিয়ে base/small বাছা যায়, আউটপুট `.txt` + `.srt`। `py_compile` যাচাই করা।
-- `requirements.txt` — শুধু `openai-whisper` (আপস্ট্রিমের অফিসিয়াল প্যাকেজ)।
+- `requirements.txt` — শুধু `openai-whisper` (অফিসিয়াল প্যাকেজ)।
 
 ## যা ঠিক করা হয়েছে / What was fixed
 
-- আপস্ট্রিমের CLI-তে ভাষা লিখতে হয় প্রতিবার (`whisper audio.mp3 --language bn`)। এই স্ক্রিপ্টে বাংলা ডিফল্ট — শুধু ফাইলের নাম দিলেই হয়।
-- আপস্ট্রিম CLI একসাথে অনেক আউটপুট ফরম্যাট দেয়; এখানে শুধু যা দরকার — বাংলা টেক্সট (`.txt`) আর সাবটাইটেল (`.srt`)।
+- সাধারণ CLI-তে ভাষা লিখতে হয় প্রতিবার (`whisper audio.mp3 --language bn`)। এই স্ক্রিপ্টে বাংলা ডিফল্ট — শুধু ফাইলের নাম দিলেই হয়।
+- সাধারণ CLI একসাথে অনেক আউটপুট ফরম্যাট দেয়; এখানে শুধু যা দরকার — বাংলা টেক্সট (`.txt`) আর সাবটাইটেল (`.srt`)।
 - মডেল সাইজ আর্গুমেন্ট দিয়ে বাছা যায় — ছোট মেশিনে `base`, ভালো নির্ভুলতার জন্য `small`।
 
 ## ব্যবহার / How to use
 
 ```bash
-# 1. ffmpeg লাগবে (আপস্ট্রিমের প্রয়োজনীয়তা)
+# 1. ffmpeg লাগবে
 sudo apt update && sudo apt install ffmpeg
 
 # 2. ইনস্টল করুন
